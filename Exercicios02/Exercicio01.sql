@@ -75,14 +75,10 @@ SELECT * FROM tb_personagem WHERE defM BETWEEN 1000 AND 2000;
 
 SELECT * FROM tb_personagem WHERE nome LIKE "%C%";
 
-SELECT * FROM tb_classe WHERE classe_personagem LIKE "%Arqueiro%";
-
-SELECT tb_personagem.nome, tb_personagem.atkf, tb_personagem.atkm, tb_personagem.deff, tb_personagem.defm, tb_classe.classe_personagem, tb_classe.fase, tb_classe.nivel
-FROM tb_personagem INNER JOIN tb_classe
+SELECT * FROM tb_personagem INNER JOIN tb_classe
 ON tb_classe.id = tb_personagem.classe_id;
 
-DELETE FROM tb_classe WHERE id = 6;
-DELETE FROM tb_classe WHERE id = 7;
-DELETE FROM tb_classe WHERE id = 8;
-DELETE FROM tb_classe WHERE id = 9;
-DELETE FROM tb_classe WHERE id = 10;
+SELECT * FROM tb_personagem INNER JOIN tb_classe
+ON tb_classe.id = tb_personagem.classe_id
+WHERE classe_personagem LIKE "%Arqueiro%";
+
